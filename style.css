@@ -1,0 +1,393 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    color: #181818;
+    font-family: "Avenir Next", "Avenir", sans-serif;
+}
+
+body {
+    background-color: rgb(13, 37, 73);
+    min-width: 300px;
+}
+
+.bar {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    background: #ededed;
+    border-bottom: 2px solid black;
+    z-index: 20;
+}
+
+.logo {
+    position: absolute;
+    top: 18px;
+    width: 80px;
+    height: 80px;
+    margin-left: 20px;
+    z-index: 100;
+}
+
+.logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition-duration: 300ms;
+
+}
+
+.logo img:hover {
+    transition-duration: 300ms;
+    transform: scale(1.2);
+}
+
+.nav {
+    width: 80%;
+    display: flex;
+    justify-content:flex-end;
+}
+
+.nav ul {
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+}
+
+.nav ul li a{
+    /* border: 1px solid black; */
+    /* border-radius: 7px; */
+    padding: 38px 15px;
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+.nav ul li a:hover {
+    background-color:  rgb(0, 141, 197);
+    color: #ededed;
+}
+
+.maintitle {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center ;
+}
+
+.maintitle h1:hover {
+    transform: scale(1.2);
+    transition-duration: 500ms;
+}
+
+.maintitle h1 {
+    color: #ededed;
+    font-style: italic;
+    font-size: 10dvw;
+    text-shadow: 0.5dvw 0.5dvw rgb(0, 141, 197);
+    transition-duration: 500ms;
+}
+
+
+
+/* __________________ BARMENU _______________________ */
+
+
+
+.barmenu {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    z-index: 1;
+  
+    -webkit-user-select: none;
+    user-select: none;
+
+    opacity: 0;
+}
+
+.barmenu input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+.barmenu span
+{
+  display: block;
+  width: 36px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #191919;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+.barmenu span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+.barmenu span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+.barmenu input:checked ~ span
+{
+  opacity: 1;
+  background: #232323;
+}
+
+.barmenu input:checked ~ span:nth-last-child(1)
+{
+  transform: rotate(90deg) translate(-22px, -16px);
+}
+
+.barmenu input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(90deg) translate(-22px, -5px);
+}
+
+.barmenu input:checked ~ span:nth-last-child(3)
+{
+    transform: rotate(90deg) translate(-4px, -27px);
+}
+
+
+#menu
+{
+    width: 150px;
+    height: 100vh;
+    position: absolute;
+
+    text-align: right;
+
+    right: -260px;
+    top: 0px;
+    padding: 30px;
+    padding-top: 120px;
+    background: #ededed;
+    /* box-shadow: rgb(0 0 0 / 38%) 0px 3px 5px; */
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    list-style-type: none;
+    transition-duration: 300ms;
+
+    z-index: 0;
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+.barmenu input:checked ~ #menu
+{
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu a {
+    padding: 10px 50px;
+}
+
+#menu a:hover {
+    background-color:  rgb(0, 141, 197);
+    color: #ededed;
+}
+
+/* _____________________________________________________ */
+
+
+.presentation {
+    width: 100%;
+    height: 300px;
+}
+
+
+.annoncefil {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.blkannonce {
+    display: flex;
+    width: 90%;
+    height: 300px;
+    /* border: 1px solid black; */
+}
+
+.annonce {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 60%;
+    margin: 10px;
+
+    border: 1px solid black;
+    border-radius: 10px;
+
+    flex-direction: column;
+
+    background: #ededed;
+    transition-duration: 300ms;
+}
+
+.annonce:hover {
+    transform: scale(1.05);
+    transition-duration: 300ms;
+}
+
+.t1 {
+    height: 10%;
+}
+
+.titre1 {
+    width: 90%;
+    height: 75%;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imgannonce {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 40%;
+    margin: 10px;
+    border: 1px solid black;
+
+    border-radius: 10px;
+
+    background: #ededed;
+
+    transition-duration: 300ms;
+}
+
+#arbremagique {
+    font-size: 1rem;
+}
+
+
+
+.texte {
+    width: 90%;
+    text-align: justify;
+}
+
+.imgannonce:hover {
+    transform: scale(1.05);
+    transition-duration: 300ms;
+}
+
+.imgannonce img {
+
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+@media (max-width: 830px)  {
+
+    .bar {
+        width: 100%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #ededed;
+        border-bottom: 2px solid black;
+        z-index: 20; 
+    }
+
+    .barmenu {
+        opacity: 1;
+    }
+
+    .logo {
+        top: 8px;
+        width: 60px;
+        height: 40px;
+    }
+    
+    .nav {
+        opacity: 100;
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content:center;
+        top: 60px;
+        padding: 20px 0px;
+        opacity: 100;
+        z-index: 10;
+    }
+    
+    .nav ul {
+        width: 60%;
+        display: flex;
+        flex-direction: row;
+        justify-content:space-around;
+        opacity: 0;
+    }
+}
+
+@media (max-width: 415px)  {
+
+    .presentation {
+        height: 400px;
+    }
+
+    .blkannonce {
+        flex-direction: column;
+        margin-bottom: 400px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .annonce {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+    }
+
+    .texte {
+        display: flex;
+        align-items: center;
+        height: 400px;
+    }
+}
